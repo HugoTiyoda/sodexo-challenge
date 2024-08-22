@@ -1,0 +1,18 @@
+syntax = "proto3";
+
+package helloworld;
+
+option java_multiple_files = true;
+option go_package = "github.com/hugotiyoda/hello-world-grpc";
+option java_package = "com.hugotiyoda.sodexo_challenge.grpc";
+option java_outer_classname = "HelloWorldProto";
+
+message Empty {}
+
+message HelloWorldMessage {
+    string message = 1;
+}
+
+service HelloWorldService {
+    rpc getMessage(Empty) returns (HelloWorldMessage);
+}
